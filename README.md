@@ -1,5 +1,5 @@
 # Programming-Language-Training
-In this repository I am trying to explore and get to know as many programming languages as possible. In order to do that I try to implement the same simple scenario in each language.
+In this repository I am trying to explore and get to know as many programming languages (and possibly also frameworks) as possible. In order to do that I try to implement the same simple scenario in each language.
 
 I use the same scenario because that way, hopefully, I will be able to compare different aspects of the languages better. Also for the sake of comparison I'll also implement the scenario in programming languages that I know quite well such as Java, C#, C++ etc.
 
