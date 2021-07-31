@@ -1,4 +1,4 @@
-package Logic;
+package mediaManagementJava.logic;
 
 public class Film extends Medium {
     private int lengthInMin;

@@ -1,4 +1,4 @@
-package Logic;
+package mediaManagementJava.logic;
 
 public class Book extends Medium {
     private int pages;

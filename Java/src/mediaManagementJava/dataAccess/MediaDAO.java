@@ -1,4 +1,4 @@
-package DataAccess;
+package mediaManagementJava.dataAccess;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package Logic;
+package mediaManagementJava.logic;
 
 public class Song extends Medium {
     private int lenghtInSec;

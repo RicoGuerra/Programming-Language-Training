@@ -1,4 +1,4 @@
-package Logic;
+package mediaManagementJava.logic;
 
 public abstract class Medium {
 	private Long id;

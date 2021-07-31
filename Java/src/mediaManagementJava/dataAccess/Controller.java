@@ -1,4 +1,4 @@
-package DataAccess;
+package mediaManagementJava.dataAccess;
 
 public class Controller {
     private MediaDAO mediaDAO;
