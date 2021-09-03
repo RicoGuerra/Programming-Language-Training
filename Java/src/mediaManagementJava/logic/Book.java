@@ -14,6 +14,6 @@ public class Book extends Medium {
 
     @Override
     public String toString() {
-        return super.toString() + ", pages: " + getPages();
+        return super.toString() + ", pages: " + getPages() + "\n";
     }
 }

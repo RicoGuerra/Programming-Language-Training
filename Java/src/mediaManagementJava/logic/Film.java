@@ -14,6 +14,6 @@ public class Film extends Medium {
 
     @Override
     public String toString() {
-        return super.toString() + ", length: " + getLengthInMin() + " min.";
+        return super.toString() + ", length: " + getLengthInMin() + " min." + "\n";
     }
 }

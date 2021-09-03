@@ -1,22 +1,15 @@
 package mediaManagementJava.dataAccess;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
 public class MediaDAO<Medium> implements DAO<Medium> {
 
-    private List<Medium> media;
     private final String data = "mediaList.txt";
-    private Path dataFile;
 
     public MediaDAO() {
-        this.dataFile = Path.of(data);
-        this.media = new LinkedList<>();
-        this.media = getAll();
     }
 
     @Override
@@ -26,33 +19,46 @@ public class MediaDAO<Medium> implements DAO<Medium> {
 
     @Override
     public List<Medium> getAll() {
-        String mediumString = null;
+        List<Medium> media = new LinkedList<>();
         try {
-            mediumString = Files.readString(dataFile);
-        } catch (IOException e) {
+            FileInputStream fileInputStream = new FileInputStream(data);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            media = (List<Medium>) objectInputStream.readObject();
+            objectInputStream.close();
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+            return null;
         }
         return media;
     }
 
     @Override
-    public void save(Medium medium) {
-        String content = medium.toString();
-        try {
-            Files.writeString(dataFile, content);
+    public void saveAll(List<Medium> media) {
+        ObjectOutputStream objectOutputStream;
+        try (FileOutputStream fileOutputStream = new FileOutputStream(data)) {
+            objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(media);
+            objectOutputStream.flush();
+            objectOutputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+    @Override
+    public void save(Medium medium) {
+        List<Medium> media = getAll();
+        media.add(medium);
+        saveAll(media);
     }
 
     @Override
     public void update(Medium medium, String[] params) {
-
+        //todo
     }
 
     @Override
     public void delete(Medium medium) {
-
+        //todo
     }
 }

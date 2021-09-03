@@ -14,6 +14,6 @@ public class Song extends Medium {
 
     @Override
     public String toString() {
-        return super.toString() + ", length: " + getLenghtInSec() + " sec.";
+        return super.toString() + ", length: " + getLenghtInSec() + " sec." + "\n";
     }
 }

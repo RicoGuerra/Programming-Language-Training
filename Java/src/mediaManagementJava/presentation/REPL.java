@@ -22,7 +22,10 @@ public class REPL {
             switch (scanner.nextLine()) {
                 case "show":
                     System.out.println("All the Media: ");
-                    mediaManagement.showAllMedia();
+                    System.out.println(mediaManagement.showAllMedia());
+                    break;
+                case "save":
+                    //todo
                     break;
                 default:
                     break;

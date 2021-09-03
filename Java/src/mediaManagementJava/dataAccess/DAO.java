@@ -11,6 +11,8 @@ public interface DAO<T> {
 
     void save(T t);
 
+    void saveAll(List<T> t);
+
     void update(T t, String[] params);
 
     void delete(T t);
