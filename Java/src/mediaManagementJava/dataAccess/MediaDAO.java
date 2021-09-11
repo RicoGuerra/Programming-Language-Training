@@ -1,6 +1,7 @@
 package mediaManagementJava.dataAccess;
 
 import java.io.*;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -48,6 +49,8 @@ public class MediaDAO<Medium> implements DAO<Medium> {
     @Override
     public void save(Medium medium) {
         List<Medium> media = getAll();
+        List<Long> idList = DAOController.getIds();
+        Long maxId = Collections.max(idList);
         media.add(medium);
         saveAll(media);
     }

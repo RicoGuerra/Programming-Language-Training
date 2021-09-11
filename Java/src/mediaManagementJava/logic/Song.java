@@ -12,6 +12,10 @@ public class Song extends Medium {
         return lenghtInSec;
     }
 
+    public void setLenghtInSec(int lenghtInSec) {
+        this.lenghtInSec = lenghtInSec;
+    }
+
     @Override
     public String toString() {
         return super.toString() + ", length: " + getLenghtInSec() + " sec." + "\n";
