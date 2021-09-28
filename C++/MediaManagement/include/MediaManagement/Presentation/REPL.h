@@ -7,6 +7,5 @@ class REPL
 private:
 
 public:
-	static void start();
+    static void start();
 };
-
